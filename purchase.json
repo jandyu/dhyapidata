@@ -1,0 +1,23 @@
+{
+  "pdtCode": "AID",
+  "pdtName": "ARTICLE_NAME",
+  "pdtSpec": "SPECIFICATION",
+  "producerCode": "",
+  "producerName": "",
+  "guarantee": "",
+  "pdtType": "",
+  "categoryCode": "COUNTER_ID",
+  "barcode": "BARCODE",
+  "packingType": "",
+  "productionDate": "",
+  "batchNo": "FIFO_ID",
+  "expirationDate": "",
+  "quantity": "Q",
+  "unit": "UNIT",
+  "purchaseDate": "AUDITE_DT",
+  "enterpriseCode": "enterpriseCode",
+  "supplierCode": "SUPPLIER_ID",
+  "supplierName": "",
+  "purchaseCode": "ENTRYSTOCK_BI",
+  "traceCode": ""
+}

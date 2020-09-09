@@ -121,7 +121,8 @@ func DebugLog(txt ...interface{}) {
 func init() {
 	//输出相关环境变量
 	if LOG_LEVEL == "" {
-		LOG_LEVEL = LOGLEVEL_WARN
+		//LOG_LEVEL = LOGLEVEL_WARN
+		LOG_LEVEL = LOGLEVEL_DEBUG
 	}
 	fmt.Println("env log init:", LOG_LEVEL)
 }

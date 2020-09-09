@@ -1,0 +1,22 @@
+{
+  "code": "SUPPIER_ID",
+  "name": "SUPPLIER_NAME",
+  "type": 1,
+  "enterpriseCode": "enterpriseCode",
+  "supplierType": 0,
+  "supplierTypeName": "",
+  "mobile": "",
+  "legalName": "",
+  "idCard": "",
+  "address": "",
+  "creditCode": "",
+  "enterpriseLicense": "",
+  "produceLicenseCode": "",
+  "produceLicense": "",
+  "businessLicenseCode": "",
+  "businessLicense": "",
+  "circulateLicenseCode": "",
+  "circulateLicense": "",
+  "cateringLicenseCode": "",
+  "cateringLicense": ""
+}

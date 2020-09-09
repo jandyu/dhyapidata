@@ -1,0 +1,23 @@
+{
+  "enterpriseCode": "enterpriseCode",
+  "pdtCode": "AID",
+  "pdtName": "ARTICLE_NAME",
+  "pdtShortName": "ACRONYM",
+  "pdtSpec": "SPECIFICATION",
+  "unit": "UNIT",
+  "barcode": "BARCODE",
+  "producerName": "",
+  "producerCode": "",
+  "productionPlace": "",
+  "guarantee": "",
+  "pdtType": "",
+  "categoryCode": "COUNTER_ID",
+  "categoryName": "",
+  "packingType": "",
+  "productionDate": "",
+  "batchNo": "",
+  "brandCode": "",
+  "brandName": "",
+  "supplierCode": "SUPPLIER_ID",
+  "supplierName": ""
+}

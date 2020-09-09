@@ -237,59 +237,60 @@ func UpdateStatus(order string, store string, dtm string, status string) error {
 	return nil
 }
 
-func SaveList(items []OrderItem, order string, store string, pos string, amt int, dtm string) error {
-
-	db := getDB()
-	if db == nil {
-		return errors.New("服务端系统异常，数据库连接失败")
-	}
-	ctx, errRtn := db.Begin()
-
-	if errRtn != nil {
-		ErrorLog("begin transaction error")
-		return errRtn
-	}
-
-	defer func() {
-		if errRtn != nil {
-			ErrorLog(errRtn.Error())
-			errRtn = ctx.Rollback()
-		}
-		db.Close()
-	}()
-
-	stmt, err := db.Prepare(INSERT_LOG)
-	if err != nil {
-		ErrorLog("Sql error,", INSERT_LOG)
-		errRtn = err
-		return errRtn
-	}
-	for _, item := range items {
-		result, err := stmt.Exec(
-			sql.Named("store", store),
-			sql.Named("pos", pos),
-			sql.Named("order", order),
-			sql.Named("dtm", dtm),
-			sql.Named("amt", amt/100.0),
-			sql.Named("name", item.Goodsname),
-			sql.Named("num", item.Goodsnum),
-			sql.Named("price", item.Goodsprice),
-			sql.Named("aid", item.goodsID),
-			sql.Named("status", "0"))
-		//	store,pos,order,dtm,amt,item.Goodsname,item.Goodsnum,item.Goodsprice,"0")
-		if err != nil {
-			ErrorLog("Insert failed:", err.Error())
-			errRtn = err
-			return errRtn
-		}
-		rtn, _ := result.LastInsertId()
-		DebugLog("exec insert, newID:", rtn)
-	}
-
-	//fmt.Println(res.RowsAffected())
-	defer stmt.Close()
-
-	errRtn = ctx.Commit()
-
-	return errRtn
-}
+//
+//func SaveList(items []OrderItem, order string, store string, pos string, amt int, dtm string) error {
+//
+//	db := getDB()
+//	if db == nil {
+//		return errors.New("服务端系统异常，数据库连接失败")
+//	}
+//	ctx, errRtn := db.Begin()
+//
+//	if errRtn != nil {
+//		ErrorLog("begin transaction error")
+//		return errRtn
+//	}
+//
+//	defer func() {
+//		if errRtn != nil {
+//			ErrorLog(errRtn.Error())
+//			errRtn = ctx.Rollback()
+//		}
+//		db.Close()
+//	}()
+//
+//	stmt, err := db.Prepare(INSERT_LOG)
+//	if err != nil {
+//		ErrorLog("Sql error,", INSERT_LOG)
+//		errRtn = err
+//		return errRtn
+//	}
+//	for _, item := range items {
+//		result, err := stmt.Exec(
+//			sql.Named("store", store),
+//			sql.Named("pos", pos),
+//			sql.Named("order", order),
+//			sql.Named("dtm", dtm),
+//			sql.Named("amt", amt/100.0),
+//			sql.Named("name", item.Goodsname),
+//			sql.Named("num", item.Goodsnum),
+//			sql.Named("price", item.Goodsprice),
+//			sql.Named("aid", item.goodsID),
+//			sql.Named("status", "0"))
+//		//	store,pos,order,dtm,amt,item.Goodsname,item.Goodsnum,item.Goodsprice,"0")
+//		if err != nil {
+//			ErrorLog("Insert failed:", err.Error())
+//			errRtn = err
+//			return errRtn
+//		}
+//		rtn, _ := result.LastInsertId()
+//		DebugLog("exec insert, newID:", rtn)
+//	}
+//
+//	//fmt.Println(res.RowsAffected())
+//	defer stmt.Close()
+//
+//	errRtn = ctx.Commit()
+//
+//	return errRtn
+//}
